@@ -3,8 +3,13 @@ import React from 'react'
 import { Hotels } from '../assets'
 
 const MenuContainer = ({ title, imageSrc, type, setType }) => {
+
+  const handlePress = () => {
+    setType(title.toLowerCase())
+  }
+
   return (
-    <TouchableOpacity className="items-center justify-center space-y-2">
+    <TouchableOpacity className="items-center justify-center space-y-2" onPress={handlePress}>
       <View className={`w-24 h-24 p-2 shadow-sm rounded-full items-center justify-center
           ${type === title.toLowerCase() ? "bg-gray-500" : "" }`}>
         <Image
